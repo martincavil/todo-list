@@ -8,26 +8,36 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <div class="container">
-    <div class="top">
-      <h1>Todo</h1>
-      <button class="create-task">Create Reminder</button>
-    </div>
-    <div class="tasks">
-      <div class="task">
-        <div class="left">
-          <div class="round"></div>
-          <div class="task-desc">
-            <h3>Organize photo shoot</h3>
-            <span>Today</span>
+  <h1>Todo List</h1>
+  <main>
+    <div class="container">
+      <h2>Tasks</h2>
+      <div class="tasks">
+        <div class="task">
+          <div class="left">
+            <div class="round"></div>
+            <div class="task-desc">
+              <h3>Organize photo shoot</h3>
+              <span>Today</span>
+            </div>
+          </div>
+          <div class="tags">
+            <div class="tag">Work</div>
+            <div class="tag">Hooli</div>
           </div>
         </div>
-        <div class="tags">
-          <div class="tag">Work</div>
-          <div class="tag">Hooli</div>
-        </div>
       </div>
+    </div>
 
+    <form action="">
+      <h2>Add a task</h2>
+      <input type="text" id="task-name" placeholder="Enter your task">
+      <input type="date" id="task-date">
+      <input type="text" id="task-tag" placeholder="Enter your tag">
+      <!-- <input type="range" id="task-priority"> -->
+      <input type="submit" class="submit-btn" value="Create Reminder">
+    </form>
+  </main>
 
 
   <script text="text/javascript" src="app.js"></script>
