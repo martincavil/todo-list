@@ -17,18 +17,19 @@ form.addEventListener('click', (e) => {
 
     taskEl.innerHTML = `
     <div class="left">
-      <div class="round"></div>
-      <div class="task-desc">
-        <h3>${taskNameEl}</h3>
-        <span>${taskDateEl}</span>
-      </div>
+    <div class="round"></div>
+    <div class="task-desc">
+    <h3>${taskNameEl}</h3>
+    <span>${taskDateEl}</span>
+    </div>
     </div>
     <div class="tags">
-      <div class="tag">${taskTagEl}</div>
+    <div class="tag">${taskTagEl}</div>
     </div>`;
 
     taskEl.addEventListener('click', () => {
-      taskEl.classList.toggle('task-done');
+      const round = document.querySelector('.round');
+      round.classList.toggle('done');
     });
 
     tasks.appendChild(taskEl);
