@@ -2,13 +2,28 @@ const form = document.querySelector('form');
 const taskName = document.querySelector('#task-name');
 const taskDate = document.querySelector('#task-date');
 const taskTag = document.querySelector('#task-tag');
-const tasks = document.querySelector('.tasks');
+const tasksList = document.querySelector('.tasks')
+
+const tasks = JSON.parse(localStorage.getItem('tasks'));
+
+if(tasks) {
+  tasks.forEach(task => {
+    addTask(task);
+  });
+};
+
 
 form.addEventListener('click', (e) => {
   e.preventDefault();
-  const taskNameEl = taskName.value;
-  const taskDateEl = taskDate.value;
-  const taskTagEl = taskTag.value;
+
+  addTask();
+});
+
+function addTask(task){
+
+  let taskNameEl = taskName.value;
+  let taskDateEl = taskDate.value;
+  let taskTagEl = taskTag.value;
 
 
   if (taskNameEl && taskDateEl && taskTagEl) {
@@ -32,10 +47,11 @@ form.addEventListener('click', (e) => {
       round.classList.toggle('done');
     });
 
-    tasks.appendChild(taskEl);
+    tasksList.appendChild(taskEl);
 
     taskName.value = "";
     taskDate.value = "";
     taskTag.value = "";
-  }
-});
+
+  };
+};
